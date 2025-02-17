@@ -42,7 +42,7 @@ done
 echo "$NEXT_IP" > "$SELECTED_IP_FILE"
 
 # Append to /etc/mailips
-echo "*: $NEXT_IP" | sudo tee -a "$MAILIPS_FILE"
+echo "*: $NEXT_IP" | sudo tee "$MAILIPS_FILE"
 
 # Log the change
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Rotated IP: $LAST_IP → $NEXT_IP" | tee -a "$LOG_FILE"
